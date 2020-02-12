@@ -22,14 +22,26 @@ def playWar():
     while hand_1 and hand_2:
         player_1 = hand_1.pop()
         player_2 = hand_2.pop()
-        
+
         if player_1 == player_2:
             print('The cards are equal')
 
         elif player_1 > player_2:
+            hand_1 = [player_1, player_2] + pile_1 + pile_2 + hand_1
+            pile_1 = []
+            pile_2 = []
             print('Player1 wins')
+            # print(len(hand_1))
 
         elif player_1 < player_2:
+            hand_2 = [player_2, player_1] + pile_2 + pile_1 + hand_2
+            pile_1 = []
+            pile_2 = []
             print('Player2 wins')
+            # print(len(hand_2))
 
+        # if len(hand_1) >= 20:
+        #     print('player_1 wins')
+        # elif len(hand_2) >= 20:
+        #     print('player_2 wins')
 playWar()
