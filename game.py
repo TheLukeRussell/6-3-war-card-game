@@ -34,7 +34,6 @@ def playWar():
         player_2 = hand_2.pop()
 
         if player_1 == player_2:
-            print(color.BOLD + '\nThe cards are equal!!' + color.END)
             pile_1.extend([player_1] + hand_1[-3:])
             hand_1 = hand_1[:-3]
             hand_1.append(pile_1.pop())
@@ -44,13 +43,11 @@ def playWar():
             hand_2.append(pile_2.pop())
 
         elif player_1 > player_2:
-            print(color.BOLD + color.GREEN + '\nPlayer 1 Wins!' + color.END)
             hand_1 = [player_1, player_2] + pile_1 + pile_2 + hand_1
             pile_1 = []
             pile_2 = []
 
         elif player_1 < player_2:
-            print(color.BOLD + color.RED + '\nPlayer 2 Wins!'+ color.END)
             hand_2 = [player_2, player_1] + pile_2 + pile_1 + hand_2
             pile_1 = []
             pile_2 = []
